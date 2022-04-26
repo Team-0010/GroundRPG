@@ -61,7 +61,7 @@ crashlytics-build.properties
 Assets/Tiny RPG Forest/
 Assets/TinyRPGTown
 
- [merge]
+[merge]
     tool = unityyamlmerge
 
 [mergetool "unityyamlmerge"]

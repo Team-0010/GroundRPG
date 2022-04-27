@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/1.Tiles/Forest.meta
 guid: e0d9ca92c47e1f34b94f196a3fa80703
+========
+guid: d4fc2f4e3485a19488f5eae943387fa9
+>>>>>>>> panda:Assets/Animation.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

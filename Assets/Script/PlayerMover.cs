@@ -13,10 +13,18 @@ public class PlayerMover : MonoBehaviour
     float hSpeed;
 
     // 0 : 위, 1 : 오른쪽, 2 : 아래, 3: 왼쪽
-    int iDirection = 0;
+    private int iDirection = 0;
     Vector2 dirVec;
 
     bool isActing = false;
+
+    public int direction 
+    {        
+        get
+        {
+            return iDirection;
+        }
+    }
 
     private void Awake()
     {

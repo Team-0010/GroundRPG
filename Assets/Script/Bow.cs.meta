@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream:Assets/Script/PlayerAttack.cs.meta
-guid: 936091b38a78feb4f9145de289bc6ffe
-=======
-guid: 60fbbc9aff991ce44a9ea4acacfb3260
->>>>>>> Stashed changes:Assets/PlayerAttack.cs.meta
+guid: c411c8e8ab73c464d9a9a60245685818
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

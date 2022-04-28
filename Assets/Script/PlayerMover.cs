@@ -94,11 +94,11 @@ public class PlayerMover : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
-            Debug.Log("대화신청");
+            //Debug.Log("대화신청");
             RaycastHit2D hit = Physics2D.Raycast(transform.position, dirVec, 1.5f, LayerMask.GetMask("NPC"));
             if (null != hit.collider)
             {
-                Debug.Log("NPC와 접촉");
+                //Debug.Log("NPC와 접촉");
                 IInteractable target = hit.collider.gameObject.GetComponent<IInteractable>();
                 if (null != target)
                 {

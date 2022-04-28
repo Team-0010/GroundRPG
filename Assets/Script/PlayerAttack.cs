@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public GameObject arrow;
     public GameObject player;
-
-    float coolTime = 100;
+       
+    float coolTime = 100;    
+    
     bool isAttack = false;
+
     Animator playerAnim;
 
     public bool isAttacking
@@ -29,7 +30,7 @@ public class PlayerAttack : MonoBehaviour
             isAttack = true;
             coolTime = 100f;
             Debug.Log("Attack On");
-            Debug.Log(coolTime);
+            Debug.Log(coolTime);           
         }
 
         if (isAttack)
@@ -47,8 +48,8 @@ public class PlayerAttack : MonoBehaviour
         {
             coolTime = -1;
             isAttack = false;
-            Debug.Log("Attack Off");
-            Debug.Log(coolTime);
+            //Debug.Log("Attack Off");
+            //Debug.Log(coolTime);
         }
-    }
+    } 
 }

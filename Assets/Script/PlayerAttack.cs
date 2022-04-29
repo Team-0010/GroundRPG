@@ -6,7 +6,7 @@ public class PlayerAttack : MonoBehaviour
 {
     public GameObject player;
        
-    float coolTime = 100;    
+    float coolTime = 200;    
     
     bool isAttack = false;
 
@@ -47,9 +47,7 @@ public class PlayerAttack : MonoBehaviour
         if (coolTime < 0)
         {
             coolTime = -1;
-            isAttack = false;
-            //Debug.Log("Attack Off");
-            //Debug.Log(coolTime);
+            isAttack = false;           
         }
     } 
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMover : MonoBehaviour
-{
+{ 
     public float moveSpeed = 1.0f;
 
     Rigidbody2D rigid;
@@ -28,6 +28,7 @@ public class PlayerMover : MonoBehaviour
 
     private void Awake()
     {
+        DontDestroyOnLoad(gameObject);
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }

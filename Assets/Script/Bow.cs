@@ -10,54 +10,63 @@ public class Bow : MonoBehaviour
     GameObject arrow = null;
 
     int direction;
-    float arrowSpeed = 10f;
+    float arrowSpeed = 20f;    
 
-    IEnumerator CreateArrow(int _direction)
+    IEnumerator CreateArrow()
     {
+        // 0 : 위, 1 : 오른쪽, 2 : 아래, 3: 왼쪽
         yield return new WaitForSeconds(.4f);
-        switch (_direction)
+        direction = player.GetComponent<PlayerMover>().direction;
+        switch (direction)
         {
             case 0:
-                arrow = Instantiate(arrowPrefab, new Vector2(player.transform.position.x, player.transform.position.y + 1f), Quaternion.identity);
-                Debug.Log("위쪽에 화살 생성");
+                arrow = Instantiate(arrowPrefab, new Vector3(player.transform.position.x, player.transform.position.y + 1f), Quaternion.identity);
                 break;
             case 1:
-                arrow = Instantiate(arrowPrefab, new Vector2(player.transform.position.x + 1f, player.transform.position.y), Quaternion.identity);
-
+                arrow = Instantiate(arrowPrefab, new Vector3(player.transform.position.x + 1f, player.transform.position.y - 0.3f), Quaternion.Euler(new Vector3(0, 0, -90)));
                 break;
             case 2:
-                arrow = Instantiate(arrowPrefab, new Vector2(player.transform.position.x, player.transform.position.y - 1f), Quaternion.identity);
+                arrow = Instantiate(arrowPrefab, new Vector2(player.transform.position.x, player.transform.position.y - 1.3f), Quaternion.Euler(new Vector3(0, 0, 180)));
                 break;
             case 3:
-                arrow = Instantiate(arrowPrefab, new Vector2(player.transform.position.x - 1f, player.transform.position.y), Quaternion.identity);
+                arrow = Instantiate(arrowPrefab, new Vector2(player.transform.position.x - 1f, player.transform.position.y - 0.3f), Quaternion.Euler(new Vector3(0, 0, 90))); ;
                 break;
 
             default:
                 break;
         }
-    }
-
-
+    }   
     private void Update()
-    { 
+    {        
+        if (Input.GetKeyDown("space"))
+        {           
+            StartCoroutine("CreateArrow");            
+        }     
 
-        // if ()
-        // {            
-        //     StartCoroutine("CreateArrow", direction);
-        // }
-        // 0 : 위, 1 : 오른쪽, 2 : 아래, 3: 왼쪽
-        direction = player.GetComponent<PlayerMover>().direction;
-        
         if (null != arrow)
         {
-            ArrowFire();
+            ArrowFire(direction);
         }
     }
 
-    void ArrowFire()
-    {
-        //arrow.transform.Translate(new Vector2(hSpeed, vSpeed) * arrowSpeed * Time.deltaTime);
-
-        arrow.transform.Translate(new Vector2(0, 1) * arrowSpeed * Time.deltaTime, Space.World);
-    }
+    void ArrowFire(int _direction)
+    {        
+        switch (_direction)
+        {
+            case 0:
+                arrow.transform.Translate(new Vector2(0, 1) * arrowSpeed * Time.deltaTime, Space.World);
+                break;
+            case 1:
+                arrow.transform.Translate(new Vector2(1, 0) * arrowSpeed * Time.deltaTime, Space.World);
+                break;
+            case 2:
+                arrow.transform.Translate(new Vector2(0, -1) * arrowSpeed * Time.deltaTime, Space.World);
+                break;
+            case 3:
+                arrow.transform.Translate(new Vector2(-1, 0) * arrowSpeed * Time.deltaTime, Space.World);
+                break;
+            default:
+                break;
+        }
+    }  
 }

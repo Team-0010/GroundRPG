@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/0.Maps/Town_Scene_1.unity
+    guid: 83c2e1213a672354aa3e8e55fa9ed2d4
+  - enabled: 1
+    path: Assets/0.Maps/Forest_Scene.unity
+    guid: 98847b4013e7ea2438f9cc67d7f5f59c
+  - enabled: 1
+    path: Assets/0.Maps/BossCave_Scene.unity
+    guid: 47370484b93b7364182830290aa377b3
   m_configObjects: {}
